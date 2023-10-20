@@ -87,6 +87,21 @@ def query_astra_db(session, query):
     bikes_results = pd.DataFrame(top_results)
     return bikes_results
 
+@task(name="Build table with Bike Reco Results")
+def create_display_table(bikes_results):
+    st.dataframe(
+        bikes_results,
+        column_config={
+            "brand": "Brand Name",
+            "model": "Model",
+            "description": "Desc",
+            "price": "Price (USD)",
+            "type": "Bike Type",
+        },
+        column_order=("brand", "model", "type", "price", "description"),
+        hide_index=True,
+        )
+
 @workflow(name="Bike Recommendation Demo UI")
 def execute_demo_ui():
     ##################################
@@ -113,14 +128,18 @@ def execute_demo_ui():
                 session, keyspace = create_connection()
                 db_query = build_hybrid_query(query, keyspace, filter, k)
                 bikes_results = query_astra_db(session, db_query)
-                if bikes_results.notnull:
-                    st.write(bikes_results)
+                if bikes_results.empty:
+                    st.error("No Response received")                    
+                else:
+                    create_display_table(bikes_results)
             else:
                 session, keyspace = create_connection()
                 db_query = build_simple_query(query, keyspace, k)
                 bikes_results = query_astra_db(session, db_query)
-                if bikes_results.notnull:
-                    st.write(bikes_results)
+                if bikes_results.empty:
+                    st.error("No Response received")                    
+                else:
+                    create_display_table(bikes_results)
         else:
             st.error("Please provide a question to start!")
 
