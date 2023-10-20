@@ -31,7 +31,7 @@ model_id = "text-embedding-ada-002"
 @task(name="Create Cassandra Connection")
 def create_connection():
     #Establish Connectivity
-    st.write("Establishing AstraDB Connection...")
+    st.write(":hourglass: Establishing AstraDB Connection...")
     cluster = Cluster(
     cloud={
         "secure_connect_bundle": ASTRA_DB_SECURE_BUNDLE_PATH,
@@ -48,13 +48,13 @@ def create_connection():
 @task(name="Embed Input Query")
 def embed_query(customer_input):
     # Create embedding based on same model
-    st.write("Using OpenAI to Create Embeddings for Input Query...")
+    st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
     embedding = openai.Embedding.create(input=customer_input, model=model_id)['data'][0]['embedding']
     return embedding
 
 @task(name="Build top k simple query")
 def build_simple_query(customer_input, keyspace, k):
-    st.write("Building Simple Database Query...")
+    st.write(":hourglass: Building Simple Database Query...")
     embedding = embed_query(customer_input)
     query = SimpleStatement(
     f"""
@@ -67,7 +67,7 @@ def build_simple_query(customer_input, keyspace, k):
 
 @task(name="Build top k hybrid query")
 def build_hybrid_query(customer_input, keyspace, filter, k):
-    st.write("Building Hybrid Search Query...")
+    st.write(":hourglass: Building Hybrid Search Query...")
     embedding = embed_query(customer_input)
     hybrid_query = SimpleStatement(
     f"""
@@ -81,7 +81,7 @@ def build_hybrid_query(customer_input, keyspace, filter, k):
 
 @task(name="Perform ANN search on Astra DB")
 def query_astra_db(session, query):
-    st.write("Retrieving results from Astra DB...")
+    st.write(":hourglass: Retrieving results from Astra DB...")
     results = session.execute(query)
     top_results = results._current_rows
     bikes_results = pd.DataFrame(top_results)
@@ -105,13 +105,10 @@ def execute_demo_ui():
     """)
 
     query = st.text_input('Please Enter your Bike Question:')
-    
-    if query:
-        # Create a checkbox with the label "Show optional text input"
-        show_optional_filter = st.checkbox("Check to Enter Bike Type", key="show_optional_filter")
-        if show_optional_filter:
-            filter = st.text_input("Please Enter Bike Type: (e.g. Kids Bike or eBikes)")
+    filter = st.text_input("Please Enter Bike Type: (e.g. Kids Bike or eBikes) ***Optional***")
 
+    if st.button('Ask Me! :bicyclist:'):
+        if query:
             if filter:
                 session, keyspace = create_connection()
                 db_query = build_hybrid_query(query, keyspace, filter, k)
@@ -124,6 +121,8 @@ def execute_demo_ui():
                 bikes_results = query_astra_db(session, db_query)
                 if bikes_results.notnull:
                     st.write(bikes_results)
+        else:
+            st.error("Please provide a question to start!")
 
 #call main method
 execute_demo_ui()
