@@ -1,1 +1,27 @@
-Folder to contain Astra_Hybrid_Search_Bike_Recommendation example
+# Bike Recommendation Engine
+Uses a small set of bike review/description to generate bike recommendations.
+
+## Setup
+- Create .env file with following values
+```sh
+  OPENAI_API_KEY=""
+  ASTRA_SECUREBUNDLE_PATH=""
+  ASTRA_DB_TOKEN=""
+  ASTRA_KEYSPACE=""
+  ASTRA_TABLE=""
+  TRACELOOP_API_KEY=""
+  LIMIT_TOP_K="3"
+```
+## Load data
+```sh
+python load_embeddings.py
+```
+## Run demo from command line
+```sh
+python demo.py
+```
+## Launch UI
+This app uses streamlit to run UI
+```sh
+streamlit run demo-ui.py
+```
