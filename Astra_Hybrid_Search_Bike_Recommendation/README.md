@@ -12,6 +12,8 @@ Uses a small set of bike review/description to generate bike recommendations.
   TRACELOOP_API_KEY=""
   LIMIT_TOP_K="3"
 ```
+Provide TRACELOOP_API_KEY only if you want telemetry to be enabled
+
 ## Load data
 ```sh
 python load_embeddings.py
