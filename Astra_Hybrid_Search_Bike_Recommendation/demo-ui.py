@@ -8,6 +8,7 @@ from traceloop.sdk.decorators import workflow, task, agent
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
 import streamlit as st
+from langchain.llms import OpenAI
 
 # Load the .env file
 if not load_dotenv(find_dotenv(),override=True):
@@ -27,7 +28,9 @@ ASTRA_DB_KEYSPACE=os.getenv('ASTRA_KEYSPACE')
 k=os.getenv('LIMIT_TOP_K')
 openai.api_key = os.getenv('OPENAI_API_KEY')
 model_id = "text-embedding-ada-002"
+llm = OpenAI(openai_api_key=os.environ['OPENAI_API_KEY'], temperature=0.1)
 
+@st.cache_resource()
 @task(name="Create Cassandra Connection")
 def create_connection():
     #Establish Connectivity
@@ -49,8 +52,27 @@ def create_connection():
 def embed_query(customer_input):
     # Create embedding based on same model
     st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
-    embedding = openai.Embedding.create(input=customer_input, model=model_id)['data'][0]['embedding']
+    prompt = f"Please suggest bikes of type {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
+    embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
     return embedding
+
+@task(name="Ask ChatGPT to Generate a Professional Recommendation")
+def create_display_cgpt_response(bikes_results, customer_input):
+    bike_desc_prompts=[]
+    for index, row in bikes_results.iterrows():
+        pairing_prompt = f"For a {customer_input}, why would you suggest {row['brand']} {row['brand']}, described as {row['description']}? The response should be as a avid biker would describe it."
+        bike_desc_prompts.append(pairing_prompt)
+    st.write("Generating Bike recommendations Using ChatGPT...")
+    recommendations = llm.generate(bike_desc_prompts)
+
+    st.write("Here are some Bike recommendations:")
+
+    desc_list=''
+    for i, generation in enumerate(recommendations.generations):
+        description = generation[0].text.strip('\n')
+        desc_list += f"- {description}\n"
+    
+    st.write(desc_list)
 
 @task(name="Build top k simple query")
 def build_simple_query(customer_input, keyspace, k):
@@ -95,7 +117,7 @@ def create_display_table(bikes_results):
             "brand": "Brand Name",
             "model": "Model",
             "description": "Desc",
-            "price": "Price (USD)",
+            "price": "Price (in USD)",
             "type": "Bike Type",
         },
         column_order=("brand", "model", "type", "price", "description"),
@@ -132,6 +154,7 @@ def execute_demo_ui():
                     st.error("No Response received")                    
                 else:
                     create_display_table(bikes_results)
+                    create_display_cgpt_response(bikes_results, query)
             else:
                 session, keyspace = create_connection()
                 db_query = build_simple_query(query, keyspace, k)
@@ -140,6 +163,7 @@ def execute_demo_ui():
                     st.error("No Response received")                    
                 else:
                     create_display_table(bikes_results)
+                    create_display_cgpt_response(bikes_results, query)
         else:
             st.error("Please provide a question to start!")
 
