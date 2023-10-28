@@ -550,5 +550,325 @@
         "type": "Commuter Bikes",
         "image": "https://i.imgur.com/CanyonCommuter7.jpg",
         "description": "The Canyon Commuter 7 is a versatile and stylish commuter bike. It has a lightweight aluminum frame, a carbon fork, and a plush suspension seatpost. The Commuter 7 is also equipped with a Shimano 11-speed drivetrain and Shimano Deore brakes. It also comes with a variety of accessories, including a rear rack, fenders, a chain guard, and lights."
-    }
+    },
+    {
+    "model": "RADCity 5 Plus Electric Bike",
+    "brand": "Rad Power Bikes",
+    "price": 1599,
+    "type": "eBikes",
+    "image": "https://radpowerbikes.com/products/radcity-5-plus-electric-bike",
+    "description": "The RADCity 5 Plus Electric Bike is a versatile and affordable electric bike that is perfect for commuting, running errands, and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Aventon Level Step-Through Electric Bike",
+    "brand": "Aventon Bikes",
+    "price": 1199,
+    "type": "eBikes",
+    "image": "https://aventon.com/products/level-step-through-electric-bike",
+    "description": "The Aventon Level Step-Through Electric Bike is a stylish and affordable electric bike that is perfect for urban riding. It has a lightweight frame and a powerful motor that can easily handle city streets and hills. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Specialized Turbo Como 4.0 Electric Bike",
+    "brand": "Specialized Bikes",
+    "price": 2599,
+    "type": "eBikes",
+    "image": "https://specialized.com/us/en/turbo-como-4-0/p/183227",
+    "description": "The Specialized Turbo Como 4.0 Electric Bike is a comfortable and stylish electric bike that is perfect for commuting and running errands. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Trek Verve+ 3 Lowstep Electric Bike",
+    "brand": "Trek Bikes",
+    "price": 2199,
+    "type": "eBikes",
+    "image": "https://trekbikes.com/us/en_US/bikes/electric-bikes/comfort-electric-bikes/verve/verve-3-lowstep-electric-bike/p/35006/",
+    "description": "The Trek Verve+ 3 Lowstep Electric Bike is a comfortable and stylish electric bike that is perfect for commuting and running errands. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Cannondale Treadwell Neo EQ Electric Bike",
+    "brand": "Cannondale Bikes",
+    "price": 2699,
+    "type": "eBikes",
+    "image": "https://www.cannondale.com/en-us/bikes/electric-bikes/city-electric-bikes/treadwell-neo-eq/women-s-treadwell-neo-eq/p/32128",
+    "description": "The Cannondale Treadwell Neo EQ Electric Bike is a versatile and stylish electric bike that is perfect for commuting, running errands, and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Giant Escape+ 3 Electric Bike",
+    "brand": "Giant Bicycles",
+    "price": 1999,
+    "type": "eBikes",
+    "image": "https://www.giantbicycles.com/us/escape-3-electric",
+    "description": "The Giant Escape+ 3 Electric Bike is a comfortable and affordable electric bike that is perfect for commuting and running errands. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Marin Presidio e3 Electric Bike",
+    "brand": "Marin Bicycles",
+    "price": 2299,
+    "type": "eBikes",
+    "image": "https://www.marinbikes.com/bikes/2023/presidio-e3",
+    "description": "The Marin Presidio e3 Electric Bike is a versatile and comfortable electric bike that is perfect for commuting, running errands, and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a step-through frame, a rear rack, and fenders."
+  },
+  {
+    "model": "Specialized Turbo Vado SL 4.0 EQ Electric Bike",
+    "brand": "Specialized Bikes",
+    "price": 2999,
+    "type": "eBikes",
+    "image": "https://specialized.com/us/en/turbo-vado-sl-4-0-eq/p/183219",
+    "description": "The Specialized Turbo Vado SL 4.0 EQ Electric Bike is a lightweight and agile electric bike that is perfect for commuting and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a rear rack, fenders, and lights."
+  },
+  {
+    "model": "Canyon Commuter 7 Electric Bike",
+    "brand": "Canyon Bikes",
+    "price": 2799,
+    "type": "eBikes",
+    "image": "https://www.canyon.com/en-us/ebikes/city/commuter/commuter-7/2361.html?dwvar_2361_pv_rahmenfarbe=GN",
+    "description": "The Canyon Commuter 7 Electric Bike is a versatile and comfortable electric bike that is perfect for commuting, running errands, and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a rear rack, fenders, and lights."
+  },
+  {
+    "model": "Trek Domane+ LT 4 Electric Bike",
+    "brand": "Trek Bikes",
+    "price": 3299,
+    "type": "eBikes",
+    "image": "https://trekbikes.com/us/en/bikes/electric-bikes/road-electric-bikes/domane/domane-lt-4-electric-bike/p/35005/",
+    "description": "The Trek Domane+ LT 4 Electric Bike is a comfortable and versatile electric bike that is perfect for commuting, touring, and exploring. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a lightweight carbon frame, a plush suspension fork, and a variety of mounting points for accessories."
+  },
+  {
+    "model": "Cannondale Synapse Carbon Neo EQ Electric Bike",
+    "brand": "Cannondale Bikes",
+    "price": 4299,
+    "type": "eBikes",
+    "image": "https://www.cannondale.com/en-us/bikes/electric-bikes/endurance-road-electric-bikes/synapse-carbon-neo-eq/synapse-carbon-neo-eq-2/p/32106",
+    "description": "The Cannondale Synapse Carbon Neo EQ Electric Bike is a lightweight and high-performance electric bike that is perfect for road cycling and commuting. It has a powerful motor and a large battery that can handle hills and long distances with ease. It also has a variety of features that make it comfortable and practical, such as a lightweight carbon frame, a plush suspension fork, and a variety of mounting points for accessories."
+  },
+  {
+    "model": "Specialized Turbo Creo SL Expert EVO Electric Bike",
+    "brand": "Specialized Bikes",
+    "price": 5999,
+    "type": "eBikes",
+    "image": "https://specialized.com/us/en/turbo-creo-sl-expert-evo/p/183230",
+    "description": "The Specialized Turbo Creo SL Expert EVO Electric Bike is the top-of-the-line electric road bike from Specialized. It is incredibly lightweight and responsive, and it has a powerful motor and a large battery that can handle any hill or distance. It also has a variety of high-end components, such as a Shimano Ultegra drivetrain and hydraulic disc brakes."
+  },
+  {
+    "model": "Chook Air 5",
+    "brand": "Nord",
+    "price": 815,
+    "type": "Kids Mountain Bikes",
+    "image": "https://nordcycles.com/images/bikes/kids/chook-air-5.jpg",
+    "description": "The Chook Air 5 gives kids aged six years and older a durable and uberlight mountain bike for their first experience on tracks and easy cruising through forests and fields. The lower top tube makes it easy to mount and dismount in any situation, giving your kids greater safety on the trails. The Chook Air 5 is the perfect intro to mountain biking."
+  },
+  {
+    "model": "Frog 55",
+    "brand": "Frog Bikes",
+    "price": 550,
+    "type": "Kids Mountain Bikes",
+    "image": "https://frogbikes.com/images/bikes/frog-55.jpg",
+    "description": "The Frog 55 is a lightweight and durable mountain bike for kids aged 7-9 years old. It has a lightweight aluminum frame, a suspension fork, and 24-inch wheels. The Frog 55 is perfect for kids who are getting started in mountain biking or who want to upgrade from a smaller bike."
+  },
+  {
+    "model": "Co-op Cycles REV 24",
+    "brand": "REI",
+    "price": 569,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.rei.com/images/product/151196/co-op-cycles-rev-24-kids-mountain-bike-2022-a_large.jpg",
+    "description": "The Co-op Cycles REV 24 is a versatile and affordable mountain bike for kids aged 7-10 years old. It has a lightweight aluminum frame, a suspension fork, and 24-inch wheels. The REV 24 is perfect for kids who want to ride on a variety of terrain, from trails to pavement."
+  },
+  {
+    "model": "Diamondback Sync'r 20",
+    "brand": "Diamondback Bikes",
+    "price": 450,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.diamondback.com/images/product/syncr-20-2023-a_large.jpg",
+    "description": "The Diamondback Sync'r 20 is a great mountain bike for kids aged 5-7 years old. It has a lightweight aluminum frame, a suspension fork, and 20-inch wheels. The Sync'r 20 is perfect for kids who are getting started in mountain biking or who want to upgrade from a smaller bike."
+  },
+  {
+    "model": "Trek Roscoe 20",
+    "brand": "Trek Bikes",
+    "price": 429,
+    "type": "Kids Mountain Bikes",
+    "image": "https://trekbikes.com/us/en/bikes/kids-bikes/mountain-bikes/roscoe/roscoe-20/p/33345/",
+    "description": "The Trek Roscoe 20 is a fun and durable mountain bike for kids aged 6-8 years old. It has a lightweight aluminum frame, a suspension fork, and 20-inch wheels. The Roscoe 20 is perfect for kids who want to explore trails and have fun on the dirt."
+  },
+  {
+    "model": "Cannondale Trail 20",
+    "brand": "Cannondale Bikes",
+    "price": 499,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.cannondale.com/en-us/bikes/kids-bikes/trail-bikes/trail/trail-20/p/32137",
+    "description": "The Cannondale Trail 20 is a lightweight and fast mountain bike for kids aged 6-8 years old. It has an aluminum frame, a suspension fork, and 20-inch wheels. The Trail 20 is perfect for kids who want to ride on trails and have fun on the dirt."
+  },
+  {
+    "model": "Specialized Jett 20",
+    "brand": "Specialized Bikes",
+    "price": 549,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.specialized.com/us/en/jett-20/p/187647",
+    "description": "The Specialized Jett 20 is a lightweight and durable mountain bike for kids aged 6-8 years old. It has an aluminum frame, a suspension fork, and 20-inch wheels. The Jett 20 is perfect for kids who want to ride on trails and have fun on the dirt."
+  },
+  {
+    "model": "Giant XTC Jr 20",
+    "brand": "Giant Bicycles",
+    "price": 599,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.giantbicycles.com/us/xtc-jr-20",
+    "description": "The Giant XTC Jr 20 is a fast and lightweight mountain bike for kids aged 6-8 years old. It has an aluminum frame, a suspension fork, and 20-inch wheels. The XTC Jr 20 is perfect for kids who want to race or ride on challenging trails."
+  },
+  {
+    "model": "Marin El Roy 20",
+    "brand": "Marin Bicycles",
+    "price": 529,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.marinbikes.com/bikes/2023/el-roy-20",
+    "description": "The Marin El Roy 20 is a fun and versatile mountain bike for kids aged 6-8 years old. It has an aluminum frame, a suspension fork, and 20-inch wheels. The El Roy 20 is perfect for kids who want to ride on trails, dirt jumps, and pump tracks."
+  },
+  {
+    "model": "Canyon Exceed JR 20",
+    "brand": "Canyon Bikes",
+    "price": 649,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.canyon.com/en-us/kids-bikes/exceed-jr/exceed-jr-20/2360.html?dwvar_2360_pv_rahmenfarbe=GN",
+    "description": "The Canyon Exceed JR 20 is a lightweight and fast cross-country mountain bike for kids aged 6-8 years old. It has an aluminum frame, a suspension fork, and 20-inch wheels. The Exceed JR 20 is perfect for kids who want to race or ride on challenging trails."
+  },
+  {
+    "model": "Pivot Trail 20",
+    "brand": "Pivot Cycles",
+    "price": 749,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.pivotcycles.com/na/product/trail-20/",
+    "description": "The Pivot Trail 20 is a high-performance mountain bike for kids aged 6-8 years old. It has a lightweight aluminum frame, a suspension fork, and 20-inch wheels. The Trail 20 is perfect for kids who want to ride on challenging trails and have fun on the dirt."
+  },
+  {
+    "model": "Yeti ARC 20",
+    "brand": "Yeti Cycles",
+    "price": 849,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.yeticycles.com/bikes/arc/2023",
+    "description": "The Yeti ARC 20 is a premium mountain bike for kids aged 6-8 years old. It has a lightweight carbon fiber frame, a suspension fork, and 20-inch wheels. The ARC 20 is perfect for kids who want to ride on the most challenging trails and have the best possible performance."
+  },
+  {
+    "model": "Intense Primer 20",
+    "brand": "Intense Cycles",
+    "price": 949,
+    "type": "Kids Mountain Bikes",
+    "image": "https://intensecycles.com/bikes/primer-20/",
+    "description": "The Intense Primer 20 is a high-performance mountain bike for kids aged 6-8 years old. It has a lightweight aluminum frame, a suspension fork, and 20-inch wheels. The Primer 20 is perfect for kids who want to ride on challenging trails and have fun on the dirt."
+  },
+  {
+    "model": "Evil Chamois Hagar 20",
+    "brand": "Evil Bikes",
+    "price": 1049,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.evil-bikes.com/chamois-hagar-20/",
+    "description": "The Evil Chamois Hagar 20 is a premium mountain bike for kids aged 6-8 years old. It has a lightweight aluminum frame, a suspension fork, and 20-inch wheels. The Chamois Hagar 20 is perfect for kids who want to ride on the most challenging trails and have the best possible performance."
+  },
+  {
+    "model": "Alchemy Jett 20",
+    "brand": "Alchemy Bicycles",
+    "price": 1149,
+    "type": "Kids Mountain Bikes",
+    "image": "https://alchemybicycles.com/products/jett-20/",
+    "description": "The Alchemy Jett 20 is a high-end mountain bike for kids aged 6-8 years old. It has a lightweight carbon fiber frame, a suspension fork, and 20-inch wheels. The Jett 20 is perfect for kids who want to ride on the most challenging trails and have the best possible performance."
+  },
+  {
+    "model": "Commencal Meta AM 20",
+    "brand": "Commencal Bikes",
+    "price": 1249,
+    "type": "Kids Mountain Bikes",
+    "image": "https://www.commencalbikes.com/meta-am-20/",
+    "description": "The Commencal Meta AM 20 is a premium enduro mountain bike for kids aged 6-8 years old. It has a lightweight aluminum frame, a suspension fork and shock, and 20-inch wheels. The Meta AM 20 is perfect for kids who want to ride on the most challenging trails and have the best possible performance."
+  },
+  {
+    "model": "Strider 12 Classic",
+    "brand": "Strider Bikes",
+    "price": 170,
+    "type": "Balance bikes",
+    "image": "https://striderbikes.com/products/strider-12-classic-balance-bike",
+    "description": "The Strider 12 Classic is a balance bike that helps kids learn to ride a bike without pedals. It has a lightweight aluminum frame and 12-inch tires. The Strider 12 Classic is perfect for kids aged 18 months to 5 years old."
+  },
+  {
+    "model": "GOMO Kids Bike 12 Inch",
+    "brand": "GOMO",
+    "price": 140,
+    "type": "Kids bikes",
+    "image": "https://www.amazon.com/GOMO-Kids-Bike-12-Inch-Training-Wheels/dp/B085F67W7B/i/616f1m-j38L._SL1500_.jpg",
+    "description": "The GOMO Kids Bike 12 Inch is a lightweight and durable kids bike that is perfect for kids aged 3-5 years old. It has a steel frame, 12-inch wheels, and training wheels. The GOMO Kids Bike 12 Inch is also equipped with a bell, basket, and kickstand."
+  },
+  {
+    "model": "Royalbaby Freestyle Kids Bike 12 Inch",
+    "brand": "Royalbaby",
+    "price": 150,
+    "type": "Kids bikes",
+    "image": "https://www.amazon.com/Royalbaby-Freestyle-Kids-Bike-12-Inch-Multicolored/dp/B0866TZ23D/i/71Xg9p0sGKL._SL1500_.jpg",
+    "description": "The Royalbaby Freestyle Kids Bike 12 Inch is a stylish and fun kids bike that is perfect for kids aged 3-5 years old. It has a lightweight aluminum frame, 12-inch wheels, and training wheels. The Royalbaby Freestyle Kids Bike 12 Inch is also equipped with a bell, basket, and kickstand."
+  },
+  {
+    "model": "Schwinn Elm Toddler Bike 12 Inch",
+    "brand": "Schwinn",
+    "price": 160,
+    "type": "Kids bikes",
+    "image": "https://www.amazon.com/Schwinn-Elm-Toddler-Bike-12-Inch/dp/B081Y193R4/i/719623c3ZKL._SL1500_.jpg",
+    "description": "The Schwinn Elm Toddler Bike 12 Inch is a durable and comfortable kids bike that is perfect for kids aged 3-5 years old. It has a steel frame, 12-inch wheels, and training wheels. The Schwinn Elm Toddler Bike 12 Inch is also equipped with a bell, basket, and kickstand."
+  },
+  {
+    "model": "Huffy Seaside Kids Bike 12 Inch",
+    "brand": "Huffy",
+    "price": 130,
+    "type": "Kids bikes",
+    "image": "https://www.target.com/p/huffy-seaside-kids-bike-12-inch-multicolored/-/A-81734320",
+    "description": "The Huffy Seaside Kids Bike 12 Inch is a fun and affordable kids bike that is perfect for kids aged 3-5 years old. It has a lightweight aluminum frame, 12-inch wheels, and training wheels. The Huffy Seaside Kids Bike 12 Inch is also equipped with a bell, basket, and kickstand."
+  },
+  {
+    "model": "Dynacraft Magna Trail Kids Bike 12 Inch",
+    "brand": "Dynacraft",
+    "price": 140,
+    "type": "Kids bikes",
+    "image": "https://www.walmart.com/ip/Dynacraft-Magna-Trail-Kids-Bike-12-Inch-Black-Orange/211121629",
+    "description": "The Dynacraft Magna Trail Kids Bike 12 Inch is a versatile kids bike that is perfect for kids aged 3-5 years old. It has a lightweight aluminum frame, 12-inch wheels, and training wheels. The Dynacraft Magna Trail Kids Bike 12 Inch is also equipped with a bell, basket, and kickstand."
+  },
+  {
+    "model": "Mongoose Switch Kids Bike 12 Inch",
+    "brand": "Mongoose",
+    "price": 170,
+    "type": "Kids bikes",
+    "image": "https://www.amazon.com/Mongoose-Switch-Kids-Bike-12-Inch/dp/B011CWH5Q4/i/61w%2BbV55r6L._SL1500_.jpg",
+    "description": "The Mongoose Switch Kids Bike 12 Inch is a unique kids bike that can be converted from a balance bike to a pedal bike. It has a lightweight aluminum frame, 12-inch wheels, and a coaster brake. The Mongoose Switch Kids Bike 12 Inch is perfect for kids aged 2-5 years old."
+  },
+  {
+    "model": "Redline BMX 12 Inch Kids Bike",
+    "brand": "Redline",
+    "price": 190,
+    "type": "Kids bikes",
+    "image": "https://www.redlinebicycles.com/bikes/kids/12-inch-bikes/mx-12-boy/mx-12-boy-gloss-teal-black.jpg",
+    "description": "The Redline BMX 12 Inch Kids Bike is a high-performance kids bike that is perfect for kids aged 4-6 years old. It has a lightweight aluminum frame, 12-inch wheels, and a coaster brake. The Redline BMX 12 Inch Kids Bike is perfect for kids who want to get into BMX racing or just have fun riding on dirt tracks and jumps."
+  },
+  {
+    "model": "GT Mach One 12 Inch Kids Bike",
+    "brand": "GT Bicycles",
+    "price": 210,
+    "type": "Kids bikes",
+    "image": "https://www.gtbicycles.com/us/en/bikes/kids/mach-one-12-2023",
+    "description": "The GT Mach One 12 Inch Kids Bike is a lightweight and durable kids bike that is perfect for kids aged 4-6 years old. It has an aluminum frame, 12-inch wheels, and a coaster brake. The GT Mach One 12 Inch Kids Bike is perfect for kids who want to get into mountain biking or just have fun riding on trails."
+  },
+  {
+    "model": "Specialized RipRock Coaster 12 Inch Kids Bike",
+    "brand": "Specialized Bikes",
+    "price": 230,
+    "type": "Kids bikes",
+    "image": "https://www.specialized.com/us/en/riprock-coaster-12/p/183246",
+    "description": "The Specialized RipRock Coaster 12 Inch Kids Bike is a fun and versatile kids bike that is perfect for kids aged 4-6 years old. It has an aluminum frame, 12-inch wheels, and a coaster brake. The Specialized RipRock Coaster 12 Inch Kids Bike is perfect for kids who want to ride on trails, dirt jumps, and pump tracks."
+  },
+  {
+    "model": "Canyon Wizz 12 Inch Kids Bike",
+    "brand": "Canyon Bikes",
+    "price": 250,
+    "type": "Kids bikes",
+    "image": "https://www.canyon.com/en-us/kids-bikes/wizz/wizz-12-2023/2356.html?dwvar_2356_pv_rahmenfarbe=GN",
+    "description": "The Canyon Wizz 12 Inch Kids Bike is a premium kids bike that is perfect for kids aged 4-6 years old. It has a lightweight aluminum frame, 12-inch wheels, and a coaster brake. The Canyon Wizz 12 Inch Kids Bike is perfect for kids who want to get into mountain biking or just have fun riding on trails."
+  },
+  {
+    "model": "Pivot Trail 12 Inch Kids Bike",
+    "brand": "Pivot Cycles",
+    "price": 270,
+    "type": "Kids bikes",
+    "image": "https://www.pivotcycles.com/na/product/trail-12/",
+    "description": "The Pivot Trail 12 Inch Kids Bike is a high-performance kids bike that is perfect for kids aged 4-6 years old. It has a lightweight aluminum frame, 12-inch wheels, and a coaster brake. The Pivot Trail 12 Inch Kids Bike is perfect for kids who want to get into mountain biking or just have fun riding on trails."
+  }
 ]
