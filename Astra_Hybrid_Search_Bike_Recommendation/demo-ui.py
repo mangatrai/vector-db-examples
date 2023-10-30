@@ -52,7 +52,7 @@ def create_connection():
 def embed_query(customer_input):
     # Create embedding based on same model
     st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
-    prompt = f"Please suggest bikes of type {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
+    prompt = f"Please suggest bikes as per {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
     embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
     return embedding
 
@@ -60,7 +60,7 @@ def embed_query(customer_input):
 def create_display_cgpt_response(bikes_results, customer_input):
     bike_desc_prompts=[]
     for index, row in bikes_results.iterrows():
-        pairing_prompt = f"For a {customer_input}, why would you suggest {row['brand']} {row['brand']}, described as {row['description']}? The response should be as a avid biker would describe it."
+        pairing_prompt = f"For a {customer_input}, why would you suggest {row['model']} {row['brand']}, described as {row['description']}? The response should be as a bike reviewer would describe it."
         bike_desc_prompts.append(pairing_prompt)
     st.write("Generating Bike recommendations Using ChatGPT...")
     recommendations = llm.generate(bike_desc_prompts)
@@ -118,9 +118,10 @@ def create_display_table(bikes_results):
             "model": "Model",
             "description": "Desc",
             "price": "Price (in USD)",
+            "image": "Bike Image",
             "type": "Bike Type",
         },
-        column_order=("brand", "model", "type", "price", "description"),
+        column_order=("brand", "model", "type", "price", "image", "description"),
         hide_index=True,
         )
 
