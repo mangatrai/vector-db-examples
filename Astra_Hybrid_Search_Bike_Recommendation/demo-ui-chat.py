@@ -60,22 +60,30 @@ def embed_query(customer_input):
 def create_display_cgpt_response(bikes_results, customer_input):
     bike_desc_prompts=[]
 
-    for index, row in bikes_results.iterrows():
-        reco_prompt = f"You are an experienced bike rider who is working at a bike retail shop Bike Mart and your job is to provide Bike Recommendations to customers. For a {customer_input}, why would you suggest {row['model']} {row['brand']}, described as {row['description']}?"
-        bike_desc_prompts.append(reco_prompt)
-
-    st.write(":bicyclist: Generating Bike recommendations Using ChatGPT :bicyclist:")
-
-    recommendations = llm.generate(bike_desc_prompts)
-
-    st.write(":bicyclist: Here are some Bike recommendations:")
-
-    desc_list=''
-    for i, generation in enumerate(recommendations.generations):
-        description = generation[0].text.strip('\n')
-        desc_list += f"- {description}\n"
+    # With the role as 'system',  we tell the model how we want it to behave and tell it how its personality and type of response should be.
+    bike_desc_prompts.append({"role":"system","content":"You are an assistant working at a bike retail shop Bike Mart and your job is to provide Bike Recommendations to customers."})
     
-    st.write(desc_list)
+    # With the role as 'user',  pass the question from user.
+    bike_desc_prompts.append({"role":"user", "content": customer_input})
+    answers_list = []
+    
+    # With the role as 'assistant',  load the results from Astra with Vector Search.  That helps the model to provide answer to the question asked by user.
+    
+    for index, row in bikes_results.iterrows():
+        answers_list.append({'role': "assistant", "content": f"{row['description']}"})
+    
+    bike_desc_prompts.extend(answers_list)
+    bike_desc_prompts.append({"role": "assistant", "content":"Here's my answer to your question."})
+    
+    st.write("Generating Bike recommendations Using ChatGPT...")
+    
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=bike_desc_prompts
+        )
+    
+    st.write(completion.choices[0].message['content'])
+
 
 @task(name="Build top k simple query")
 def build_simple_query(customer_input, keyspace, k):
