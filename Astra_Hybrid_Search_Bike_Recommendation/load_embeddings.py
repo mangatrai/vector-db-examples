@@ -65,6 +65,16 @@ def create_db_objects(session, keyspace):
     session.execute(f"""CREATE CUSTOM INDEX IF NOT EXISTS type_idx_analyzer ON {ASTRA_DB_KEYSPACE}.bikes (type) USING 'org.apache.cassandra.index.sai.StorageAttachedIndex' WITH OPTIONS = {{'index_analyzer': '{{"tokenizer" : {{"name" : "standard"}},"filters" : [{{"name" : "porterstem"}},{{"name" : "lowercase",	"args": {{}}}}]}}'}};""")
     print("DB Objects Created")
 
+@task(name="Download Raw json data file from source")
+def load_data_file():
+    #load data from sample json file
+    url = "https://raw.githubusercontent.com/mangatrai/vector-db-examples/main/Astra_Hybrid_Search_Bike_Recommendation/data/bikes-updated.json"
+    response = requests.get(url)
+    bikes = response.json()
+    print("Bike file loaded")
+    bikes = pd.DataFrame(bikes)
+    return bikes
+
 @task(name="Create and load Embeddings")    
 def create_load_embeddings(bikes, session):
    for id in bikes.index:
@@ -82,28 +92,18 @@ def create_load_embeddings(bikes, session):
       # Create Embedding for each bike row, save them to the database
       full_chunk = bikes['description'][id]
       embedding = openai.Embedding.create(input=full_chunk, model=model_id)['data'][0]['embedding']
-      print("Embeddings Created - Count " + str(id))
+      #print("Embeddings Created - Count " + str(id))
       query = SimpleStatement(f"""INSERT INTO bike_rec.bikes(model, brand, price, image, type, description, description_embedding) VALUES (%s, %s, %s, %s, %s, %s, %s)""")
      
       # Create a try-catch block
       try:
          session.execute(query, (bikes['model'][id], bikes['brand'][id], bikes['price'][id], image, bikes['type'][id], description, embedding), trace=True)
-         print("Record Inserted in Astra -  Count " + str(id))
+         print("Record Inserted: " + str(id))
       except Exception as e:
           # Log the exception
           traceback.print_exc()
           print(e)
           break
-
-def load_data_file():
-    #load data from sample json file
-    url = "https://raw.githubusercontent.com/mangatrai/vector-db-examples/main/Astra_Hybrid_Search_Bike_Recommendation/data/bikes-updated.json"
-    response = requests.get(url)
-    bikes = response.json()
-    print("Bike file loaded")
-    bikes = pd.DataFrame(bikes)
-    return bikes
-
 
 @workflow(name="Load Bike Recommendation Data")
 def run_loading_data():
