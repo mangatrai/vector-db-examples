@@ -48,35 +48,6 @@ def create_connection():
     keyspace = ASTRA_DB_KEYSPACE
     return session, keyspace
 
-@task(name="Embed Input Query")
-def embed_query(customer_input):
-    # Create embedding based on same model
-    st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
-    prompt = f"Please suggest {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
-    embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
-    return embedding
-
-@task(name="Ask ChatGPT to Generate a Professional Recommendation")
-def create_display_cgpt_response(bikes_results, customer_input):
-    bike_desc_prompts=[]
-
-    for index, row in bikes_results.iterrows():
-        reco_prompt = f"You are an experienced bike rider who is working at a bike retail shop Bike Mart and your job is to provide Bike Recommendations to customers. For a {customer_input}, why would you suggest {row['model']} {row['brand']}, described as {row['description']}?"
-        bike_desc_prompts.append(reco_prompt)
-
-    st.write(":bicyclist: Generating Bike recommendations Using ChatGPT :bicyclist:")
-
-    recommendations = llm.generate(bike_desc_prompts)
-
-    st.write(":bicyclist: Here are some Bike recommendations:")
-
-    desc_list=''
-    for i, generation in enumerate(recommendations.generations):
-        description = generation[0].text.strip('\n')
-        desc_list += f"- {description}\n"
-    
-    st.write(desc_list)
-
 @task(name="Build top k simple query")
 def build_simple_query(customer_input, keyspace, k):
     st.write(":hourglass: Building Simple Database Query...")
@@ -104,6 +75,14 @@ def build_hybrid_query(customer_input, keyspace, filter, k):
     )
     return hybrid_query
 
+@task(name="Embed Input Query")
+def embed_query(customer_input):
+    # Create embedding based on same model
+    st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
+    prompt = f"Please suggest {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
+    embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
+    return embedding
+
 @task(name="Perform ANN search on Astra DB")
 def query_astra_db(session, query):
     st.write(":hourglass: Retrieving results from Astra DB...")
@@ -130,10 +109,31 @@ def create_display_table(bikes_results):
         hide_index=True,
         )
 
+@task(name="Ask ChatGPT to Generate a Professional Recommendation")
+def create_display_cgpt_response(bikes_results, customer_input):
+    bike_desc_prompts=[]
+
+    for index, row in bikes_results.iterrows():
+        reco_prompt = f"You are an experienced bike rider who is working at a bike retail shop Bike Mart and your job is to provide Bike Recommendations to customers. For a {customer_input}, why would you suggest {row['model']} {row['brand']}, described as {row['description']}?"
+        bike_desc_prompts.append(reco_prompt)
+
+    st.write(":bicyclist: Generating Bike recommendations Using ChatGPT :bicyclist:")
+
+    recommendations = llm.generate(bike_desc_prompts)
+
+    st.write(":bicyclist: Here are some Bike recommendations:")
+
+    desc_list=''
+    for i, generation in enumerate(recommendations.generations):
+        description = generation[0].text.strip('\n')
+        desc_list += f"- {description}\n"
+    
+    st.write(desc_list)
+
 @workflow(name="Bike Recommendation Demo UI")
 def execute_demo_ui():
     ##################################
-    st.title('🚲 Bike Recommendation Engine')
+    st.title('🚲 Bike Recommendation Agent')
     st.write("These Bike Recommendations are based on sample dataset.")
     with st.expander('**Scenario Details**'):
         st.write("""
@@ -142,8 +142,9 @@ def execute_demo_ui():
 
     Based on the bike recommendation asked, this demo will:
 
-    1. Search the vector database for the best bike matches, using these reviews and descrition;
-    2. User have the ability to further instruct on what type of bike;
+    1. Search the vector database for the best bike matches, using these reviews and description.
+    2. User have the ability to further instruct on what type of bike.
+    3. ChatGPT completion API is used to clean the description as per context.
 
     """)
 
