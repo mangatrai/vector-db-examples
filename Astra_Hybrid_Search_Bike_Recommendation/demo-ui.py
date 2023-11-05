@@ -48,6 +48,14 @@ def create_connection():
     keyspace = ASTRA_DB_KEYSPACE
     return session, keyspace
 
+@task(name="Embed Input Query")
+def embed_query(customer_input):
+    # Create embedding based on same model
+    st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
+    prompt = f"Please suggest {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
+    embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
+    return embedding
+
 @task(name="Build top k simple query")
 def build_simple_query(customer_input, keyspace, k):
     st.write(":hourglass: Building Simple Database Query...")
@@ -74,14 +82,6 @@ def build_hybrid_query(customer_input, keyspace, filter, k):
     """
     )
     return hybrid_query
-
-@task(name="Embed Input Query")
-def embed_query(customer_input):
-    # Create embedding based on same model
-    st.write(":hourglass: Using OpenAI to Create Embeddings for Input Query...")
-    prompt = f"Please suggest {customer_input}? Please respond in format that would be suitable for searching a database of professional bike reviews."
-    embedding = openai.Embedding.create(input=prompt, model=model_id)['data'][0]['embedding']
-    return embedding
 
 @task(name="Perform ANN search on Astra DB")
 def query_astra_db(session, query):
