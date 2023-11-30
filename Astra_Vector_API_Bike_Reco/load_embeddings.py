@@ -1,5 +1,4 @@
 import os, requests, json
-import pandas as pd
 from dotenv import load_dotenv, find_dotenv
 from astrapy.db import AstraDB
 from openai import OpenAI
@@ -39,7 +38,7 @@ def create_astra_collection(astra_db, astra_create_collection):
 
 def load_data_file():
     #load data from sample json file
-    url = "https://raw.githubusercontent.com/mangatrai/vector-db-examples/main/Astra_Hybrid_Search_Bike_Recommendation/data/bikes-updated.json"
+    url = os.getenv('REVIEWS_FILE_URL')
     response = requests.get(url)
     bikes = response.json()
     print("Bike file loaded")
