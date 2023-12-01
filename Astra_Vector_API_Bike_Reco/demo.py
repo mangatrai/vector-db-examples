@@ -26,7 +26,7 @@ def create_collection(astra_db_api_endpoint,astra_db_token, astra_namespace,astr
     token=astra_db_token,
     namespace=astra_namespace
     )
-    astra_collection_obj = astra_db.create_collection(astra_create_collection, dimension=1536)
+    astra_collection_obj = astra_db.collection(astra_create_collection)
     return astra_collection_obj
 
 def embed_query(customer_input):
@@ -66,11 +66,14 @@ def execute_demo():
     query_mode = ask_user_query_mode("simple", "hybrid")
 
     if(query_mode == "hybrid"):
-        filter = input("Please Enter Bike Type: (e.g. Kids Bike or eBikes)")
+        filter = input("Please Enter Bike Type: (e.g. Kids bikes or eBikes)")
         bikes_results = execute_hybrid_query(query, astra_collection_obj, filter, k)
     else:
         bikes_results = execute_simple_query(query, astra_collection_obj, k)
 
-    print(json.dumps(bikes_results,indent=2))
+    if len(bikes_results) > 0:
+        print(json.dumps(bikes_results,indent=2))
+    else:
+        print("No Recommendations Found")
 
 execute_demo()
